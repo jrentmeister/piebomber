@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Military/Bomber theme colors */
+  --primary-green: #6b7a52;
+  --primary-green-dark: #5a6745;
+  --primary-green-darker: #4a5537;
+  --accent-tan: #d4c5a0;
+  --dark-bg: #2a2a2a;
+  --light-bg: #f5f5f0;
+  --text-dark: #333;
+  --text-light: #fff;
+  --text-muted: #666;
+  --border-radius: 4px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--light-bg);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+a {
+  color: var(--primary-green);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-green-dark);
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background-color: var(--primary-green);
+  color: var(--text-light);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-green-dark);
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+  background-color: var(--primary-green-darker);
+  color: var(--text-light);
+}
+
+.btn-secondary:hover {
+  background-color: var(--dark-bg);
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-light);
+  border: 2px solid var(--text-light);
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Navigation */
+.nav-header {
+  background-color: var(--primary-green);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-light);
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-logo-circle {
+  width: 40px;
+  height: 40px;
+  background-color: var(--text-light);
+  color: var(--primary-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: var(--text-light);
+  padding: 0 20px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+  border: none;
+  background: none;
+}
+
+.nav-link:hover {
+  background-color: var(--primary-green-dark);
+  color: var(--text-light);
+}
+
+.nav-link.active {
+  background-color: var(--primary-green-darker);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .container,
+  .nav-container {
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    display: none; /* Mobile menu would go here */
+  }
+}

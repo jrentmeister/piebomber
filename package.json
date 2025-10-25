@@ -1,0 +1,61 @@
+{
+  "name": "piebomber",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "NODE_OPTIONS=\"-r dotenv/config\" tsx watch server/index.ts",
+    "dev:client": "vite",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build",
+    "build:server": "tsc -p tsconfig.server.json",
+    "start": "NODE_ENV=production node dist/server/index.js",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx server/db/migrate.ts",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "db:seed": "tsx server/db/seed.ts",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.9.0",
+    "@tanstack/react-query": "^5.56.2",
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.33.0",
+    "express": "^4.21.1",
+    "pg": "^8.16.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.7.5",
+    "@types/pg": "^8.15.5",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.8.1",
+    "@typescript-eslint/parser": "^8.8.1",
+    "@vitejs/plugin-react": "^4.3.2",
+    "concurrently": "^9.0.1",
+    "drizzle-kit": "^0.24.2",
+    "eslint": "^9.12.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.12",
+    "globals": "^15.11.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.8.1",
+    "vite": "^5.4.8"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
